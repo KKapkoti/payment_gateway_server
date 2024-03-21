@@ -19,9 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", paymentRoute);
 
-app.get("/api/getkey", (req,res)=>
+app.get("/api/getkey", (req,res) =>{
+   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
    res.status(200).json({key:process.env.RAZORPAY_API_KEY})
-);
+});
 
 
 module.exports =app;

@@ -3,7 +3,7 @@
 const crypto = require('crypto');
 const Payment = require('../models/paymentModel.js');
 const fs = require('fs');
-const BASE_URL = process.env.BASE_URL
+// const BASE_URL = process.env.BASE_URL
 
 //create order
 const checkout = async(req, res) =>{
@@ -52,7 +52,7 @@ const paymentVerification = async (req, res) => {
           razorpay_signature,
         });
   
-        res.redirect(`${process.env.BASE_URL}/paymentsuccess?reference=${razorpay_payment_id}`);               
+        res.redirect(`http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`);               
       } else {
         res.status(400).json({ success: false, error: "Invalid Signature" });
       }

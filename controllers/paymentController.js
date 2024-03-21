@@ -27,9 +27,6 @@ const checkout = async(req, res) =>{
 };
 
 
-
-
-
 // Define the paymentVerification function
 const paymentVerification = async (req, res) => {
     try {
